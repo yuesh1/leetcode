@@ -72,8 +72,9 @@ public class TwoSumList {
      *
      * 2021/2/5 5:13 PM 作答
      *
-     * Success: Runtime:4 ms, faster than 34.71% of Java online submissions. Memory Usage:38.7 MB,
-     * less than 38.51% of Java online submissions.
+     * Success:
+     * 		Runtime:4 ms, faster than 34.71% of Java online submissions.
+     * 		Memory Usage:38.7 MB, less than 38.51% of Java online submissions.
      */
     public static int[] twoSum(int[] nums, int target) {
 
@@ -93,7 +94,7 @@ public class TwoSumList {
     /**
      * 双重for循环暴力解法 思路，游标从两边向中间游动，且在相等时结束，避免重复
      *
-     * 2021/2/5 5:31 PM PM 作答
+     * 2021/2/5 5:31 PM 作答
      *
      * Success:
      * 				Runtime:0 ms, faster than 100.00% of Java online submissions.
