@@ -1,7 +1,9 @@
 package fun.yueshi;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -62,7 +64,7 @@ public class TwoSumList {
     public static void main(String[] args) {
         int[] nums = new int[] {3, 2, 4};
         int target = 6;
-        for (int anInt : twoSum2(nums, target)) {
+        for (int anInt : twoSum3(nums, target)) {
             System.out.println(anInt);
         }
     }
@@ -111,6 +113,34 @@ public class TwoSumList {
             }
         }
         return new int[] {};
+    }
+
+    /**
+     * 思路：两次循环，利用map的数据特征，进行比对
+     *
+     * Success:
+     * 				Runtime:4 ms, faster than 34.26% of Java online submissions.
+     * 				Memory Usage:38.7 MB, less than 42.38% of Java online submissions.
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] twoSum3(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
+
+        for (int i = 0; i < nums.length; i++) {
+            map.put(target - nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            Integer item = map.get(nums[i]);
+            if (Objects.nonNull(item) && i != item) {
+                return new int[]{i, item};
+            }
+        }
+        return new int[]{};
+
     }
 
 }
