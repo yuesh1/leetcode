@@ -18,16 +18,17 @@ public class SelectionSort {
 
     private static void sort0(int[] a) {
         for (int i = 0; i < a.length; i++) {
-            int tmp = i;
+            int tmpIndex = i;
+            int tmpVal = a[i];
             for (int j = i + 1; j < a.length; j++) {
-                if (a[j] < a[tmp]) {
-                  tmp  = j;
+                if (a[j] < tmpVal) {
+                  tmpIndex  = j;
+                  tmpVal = a[j];
                 }
             }
-            if (tmp != i) {
-                int t = a[tmp];
-                a[tmp] = a[i];
-                a[i] = t;
+            if (tmpIndex != i) {
+                a[tmpIndex] = a[i];
+                a[i] = tmpVal;
             }
         }
     }
